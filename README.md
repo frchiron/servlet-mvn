@@ -15,13 +15,15 @@ Chaque étape de l'exercice est présente dans une branche git dédiée (`step-x
 
 Pour la récupérer  executer
 ```
-git checkout -b stepX remotes/origin/stepX
+git checkout -b step-X remotes/origin/step-X
 ``` 
 
 Avant de récupérer une nouvelle étape, n'oubliez pas de committer en local vos modifications. Pour commiter la solution d'une étape X :
 
 ```
 git add src/*
-git commit -am "Solution stepX"
+git commit -am "Solution step-X"
 ```
 
+
+Remarque : pour l'étape 5, il est nécessaire de récupérer la branche git correspondante car il y a des modifications autres que celles effectuées aux étapes précédentes
