@@ -74,7 +74,23 @@ De quel type est-il ?
 
 * Relancer le serveur Jetty via Maven et vérifier que le serveur est up (par défaut http://localhost:8080/)
 
- - Remarque : les classes App est AppTest créées par défaut peuvent être supprimées
+* Lancer la génération du WAR avec Maven :
+  ```
+  mvn clean package
+  ``` 
+
+
+* Compléter le projet en créant un fichier de déploiement  d'archive WAR :
+    * Créer sous src/main/webapp/WEB-INF un fichier web.xml avec le contenu suivant :
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+             version="4.0">
+    </web-app>
+    ```
+* Relancer la génération et vérifier que le war est bien créé    
 
 ### Etape 3: Création d'une servlet
 
