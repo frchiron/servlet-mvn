@@ -110,4 +110,22 @@ mvn jetty:run
 ```
 
 
+### Etape 4 : Exemple de conflit sur les dépendances
+
+* (Re)lancer Jetty via Maven :
+```
+mvn jetty:run
+```
+
+
+Les logs affichent plusieurs warnings concernant la classe Servlet. 
+
+ La classe Servlet est en effet présente dans la dépendance javaee-web-api  que nous avons rajouté et dans le serveur Jetty (qui est un conteneur de servlets). 
+
+Afin d'éviter toute ambiguité à l'exécution de l'application, Maven permet d'exclure une dépendance à l'exécution, cf https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope)
+
+* Modifier le pom.xml en conséquence en rajoutant le scope nécessaire (`<scope>...</scope>`) pour la dépendance javaee-web-api
+
+* Re-lancer Jetty et vérifier qu'il n'y a plus de warnings :
+`mvn jetty:run`
 
