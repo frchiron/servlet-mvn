@@ -129,3 +129,21 @@ Afin d'éviter toute ambiguité à l'exécution de l'application, Maven permet d
 * Re-lancer Jetty et vérifier qu'il n'y a plus de warnings :
 `mvn jetty:run`
 
+### Etape 5 : Injection de dépendances
+
+* Jetty étant un conteneur de servlet, nous avons besoin de rajouter une fonctionnalité de CDI (Context & Depencies Injection). Dans le pom.xml rajouter la dépendances
+weld-servlet en version 2.4.8.Final
+
+Pour info le projet a également été complété avec des fichiers de configuration sous WEB-INF pour l'injection de dépendances.
+
+
+* Compléter la méthode doGet afin d'afficher dans le navigateur le titre du livre correpond à l'id passé en paramètre. (exemple : http://localhost:8080/book?id=1), en injectant le service BookService (utilisation de @Inject)
+
+
+
+* Exécuter l'application via `mvn jetty:run`
+
+
+
+
+
