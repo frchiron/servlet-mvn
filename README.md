@@ -25,3 +25,24 @@ git add src/*
 git commit -am "Solution stepX"
 ```
 
+
+## Etapes
+
+### Etape 1
+
+- Initialiser un squelette de projet Maven en ligne de commande :
+
+```
+mvn archetype:generate -DgroupId=org.esgi -DartifactId=my-jpa-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+```
+
+- Construire le projet 
+
+
+```
+cd my-jpa-app
+mvn clean install
+```
+
+ - Voir l'archetype généré (tips : il est sous le répertoire /target)
+De quel type est-il ?
