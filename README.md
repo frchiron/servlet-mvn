@@ -32,7 +32,7 @@ git commit -am "Solution stepX"
 
 ## Etapes
 
-### Etape 1
+### Etape 1 : Initialisation du projet
 
 - Initialiser un squelette de projet Maven en ligne de commande :
 
@@ -50,7 +50,7 @@ mvn clean install
  - Voir l'archetype généré (tips : il est sous le répertoire /target)
 De quel type est-il ?
 
-### Etape 2
+### Etape 2 : Mise en place du serveur Jetty
 
 * Créer sous Intellij un nouveau projet à partir de sources existantes et sélectionner le répertoire du projet servlet-mvn
 
@@ -67,7 +67,7 @@ De quel type est-il ?
   mvn jetty:run    
   ``` 
 
-* Bien que l'info "BUILD SUCCESS" est affichée, le serveur Jetty ne se lance pas. Pourquoi ?
+* Bien que l'info "BUILD SUCCESS" soit affichée, le serveur Jetty ne se lance pas. Pourquoi ?
     
 
 * Modifier le pom.xml afin que Maven génère une archive WAR pour les serveurs JEE (tips : http://maven.apache.org/pom.html#Maven_Coordinates)
@@ -75,3 +75,23 @@ De quel type est-il ?
 * Relancer le serveur Jetty via Maven et vérifier que le serveur est up (par défaut http://localhost:8080/)
 
  - Remarque : les classes App est AppTest créées par défaut peuvent être supprimées
+
+### Etape 3: Création d'une servlet
+
+* Créer une servlet BookServlet par annotation qui répond à l'url /book
+
+    * La servlet doit étendre la classe HttpServlet
+
+    * Par défaut la classe HttpServlet n'est pas trouvée, il faut rajouter dans le pom.xml la dépendance javaee-web-api en version 8.0
+
+* Ajouter la méthode doGet (tips : reprendre la signature de HttpServlet) et rajouter un `System.out.println` pour vérifier la bonne exécution de la servlet
+
+* Lancer Jetty et vérifier que la servlet est exécutée :
+    * vérifier la bonne exécution avec l'url : http://localhost:8080/book et la console Intellij
+
+```
+mvn jetty:run
+```
+
+
+
