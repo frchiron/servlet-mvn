@@ -5,7 +5,24 @@ Exercice pour s'initier à la création de servlets, Maven et l'injection de dé
 ## Pré-requis
 
 - Maven 3.+
+  
+  Vérifier que Maven 3.x est installé (le répertoire bin de Maven doit être dans $PATH):
+  
+  ```
+  mvn -version
+  # =>
+  Apache Maven 3.6.0
+  Maven home: /usr/share/maven
+  ```
 - JDK 8+
+  ```
+  java -version
+  # =>
+  openjdk version "11.0.2" 2019-01-15
+  ...
+  ```
+
+
 - Intellij
 
 
@@ -13,21 +30,22 @@ Exercice pour s'initier à la création de servlets, Maven et l'injection de dé
 
 Chaque étape de l'exercice est présente dans une branche git dédiée (`step-x`) 
 
-
-
 Pour la récupérer  executer
 ```
-git checkout -b stepX remotes/origin/stepX
+git checkout -b step-X remotes/origin/step-X
 ``` 
-
-NOTE : L'étape 1 n'a pas besoin d'être récupérée en local
 
 Avant de récupérer une nouvelle étape, n'oubliez pas de committer en local vos modifications. Pour commiter la solution d'une étape X :
 
 ```
 git add src/*
-git commit -am "Solution stepX"
+git commit -am "Solution step-X"
 ```
+
+
+Remarques : 
+ - l'étape 1 n'a pas besoin d'être récupérée en local
+ - pour l'étape 5, il est nécessaire de récupérer la branche git correspondante car il y a des modifications autres que celles effectuées aux étapes précédentes
 
 
 ## Etapes
@@ -99,6 +117,8 @@ De quel type est-il ?
     * La servlet doit étendre la classe HttpServlet
 
     * Par défaut la classe HttpServlet n'est pas trouvée, il faut rajouter dans le pom.xml la dépendance javaee-web-api en version 8.0
+    
+    * L'annotation @WebServlet permet de déclarer des servlets (see https://docs.oracle.com/javaee/7/api/javax/servlet/annotation/WebServlet.html)
 
 * Ajouter la méthode doGet (tips : reprendre la signature de HttpServlet) et rajouter un `System.out.println` pour vérifier la bonne exécution de la servlet
 
