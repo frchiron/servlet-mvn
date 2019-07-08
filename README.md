@@ -152,7 +152,7 @@ Afin d'éviter toute ambiguité à l'exécution de l'application, Maven permet d
 ### Etape 5 : Injection de dépendances
 
 * Jetty étant un conteneur de servlet, nous avons besoin de rajouter une fonctionnalité de CDI (Context & Depencies Injection). Dans le pom.xml rajouter la dépendances
-weld-servlet en version 2.4.8.Final
+weld-servlet en version 2.4.8.Final (voir https://mvnrepository.com)
 
 Pour info le projet a également été complété avec des fichiers de configuration sous WEB-INF pour l'injection de dépendances.
 
