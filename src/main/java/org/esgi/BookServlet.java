@@ -11,6 +11,9 @@ import java.io.IOException;
 @WebServlet("/book")
 public class BookServlet extends HttpServlet {
 
+    @Inject
+    private BookService bookService;
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
 
@@ -18,8 +21,9 @@ public class BookServlet extends HttpServlet {
 
         String titleFound = null;
         if (id != null) {
-            // TODO recuperer le titre du livre
-            //titleFound = ...;
+            Book myBook = bookService.findById(Integer.valueOf(id));
+            titleFound = myBook.getTitle();
+
         }
         resp.getWriter().println(titleFound);
 
