@@ -5,7 +5,24 @@ Exercice pour s'initier à la création de servlets, Maven et l'injection de dé
 ## Pré-requis
 
 - Maven 3.+
+  
+  Vérifier que Maven 3.x est installé (le répertoire bin de Maven doit être dans $PATH):
+  
+  ```
+  mvn -version
+  # =>
+  Apache Maven 3.6.0
+  Maven home: /usr/share/maven
+  ```
 - JDK 8+
+  ```
+  java -version
+  # =>
+  openjdk version "11.0.2" 2019-01-15
+  ...
+  ```
+
+
 - Intellij
 
 
@@ -26,4 +43,6 @@ git commit -am "Solution step-X"
 ```
 
 
-Remarque : pour l'étape 5, il est nécessaire de récupérer la branche git correspondante car il y a des modifications autres que celles effectuées aux étapes précédentes
+Remarques : 
+ - l'étape 1 n'a pas besoin d'être récupérée en local
+ - pour l'étape 5, il est nécessaire de récupérer la branche git correspondante car il y a des modifications autres que celles effectuées aux étapes précédentes
