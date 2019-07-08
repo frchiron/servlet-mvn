@@ -85,6 +85,12 @@ De quel type est-il ?
   mvn jetty:run    
   ``` 
 
+  NOTE : si le port http par défaut 8080 est déjà utilisé sur votre poste, utiliser l'option jetty.port
+  
+   ```
+   mvn jetty:run -Djetty.port=<MON_PORT>
+   ```
+
 * Bien que l'info "BUILD SUCCESS" est affichée, le serveur Jetty ne se lance pas. Pourquoi ?
     
 
